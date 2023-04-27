@@ -52,6 +52,10 @@ def binary_search(array, element, left, right):
     middle = (right + left) // 2
     if array[middle] == element:
         return f'Индекс эллемента перед введенным числом: {middle - 1}'
+    elif element <= array[left]:
+        return 'Введенное число минимальное в последовательности, отсутствуют эллементы спереди'
+    elif element >= right:
+        return f'Введенное число максимальное в последовательности, индекс элемента перед ним: {right - 1}'
     elif element < array[middle]:
 
         return binary_search(array, element, left, middle - 1)
